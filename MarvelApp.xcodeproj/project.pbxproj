@@ -12,6 +12,10 @@
 		B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */; };
 		B6C0616E20DD9CF2000E9531 /* MarvelCharactersResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616D20DD9CF2000E9531 /* MarvelCharactersResource.swift */; };
 		B6C0617220DD9D32000E9531 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0617120DD9D32000E9531 /* Resource.swift */; };
+		B6C0617420DDA00A000E9531 /* MarvelCharacterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0617320DDA00A000E9531 /* MarvelCharacterResource.swift */; };
+		B6C0617620DDA24A000E9531 /* MarvelCharactersDataResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0617520DDA24A000E9531 /* MarvelCharactersDataResource.swift */; };
+		B6C0617820DDA2BD000E9531 /* ThumbnailResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0617720DDA2BD000E9531 /* ThumbnailResource.swift */; };
+		B6C0617A20DDA2ED000E9531 /* ThumbnailResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0617920DDA2ED000E9531 /* ThumbnailResourceTest.swift */; };
 		B6E0562020DD7EB1003039CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0561F20DD7EB1003039CD /* AppDelegate.swift */; };
 		B6E0562220DD7EB1003039CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0562120DD7EB1003039CD /* ViewController.swift */; };
 		B6E0562520DD7EB1003039CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562320DD7EB1003039CD /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 		B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterMother.swift; sourceTree = "<group>"; };
 		B6C0616D20DD9CF2000E9531 /* MarvelCharactersResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersResource.swift; sourceTree = "<group>"; };
 		B6C0617120DD9D32000E9531 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		B6C0617320DDA00A000E9531 /* MarvelCharacterResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterResource.swift; sourceTree = "<group>"; };
+		B6C0617520DDA24A000E9531 /* MarvelCharactersDataResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersDataResource.swift; sourceTree = "<group>"; };
+		B6C0617720DDA2BD000E9531 /* ThumbnailResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailResource.swift; sourceTree = "<group>"; };
+		B6C0617920DDA2ED000E9531 /* ThumbnailResourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailResourceTest.swift; sourceTree = "<group>"; };
 		B6E0561C20DD7EB1003039CD /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E0561F20DD7EB1003039CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E0562120DD7EB1003039CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */,
+				B6C0617920DDA2ED000E9531 /* ThumbnailResourceTest.swift */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -124,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				B6C0616D20DD9CF2000E9531 /* MarvelCharactersResource.swift */,
+				B6C0617520DDA24A000E9531 /* MarvelCharactersDataResource.swift */,
+				B6C0617320DDA00A000E9531 /* MarvelCharacterResource.swift */,
+				B6C0617720DDA2BD000E9531 /* ThumbnailResource.swift */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -349,6 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C0616E20DD9CF2000E9531 /* MarvelCharactersResource.swift in Sources */,
+				B6C0617820DDA2BD000E9531 /* ThumbnailResource.swift in Sources */,
+				B6C0617420DDA00A000E9531 /* MarvelCharacterResource.swift in Sources */,
+				B6C0617620DDA24A000E9531 /* MarvelCharactersDataResource.swift in Sources */,
 				B6C0617220DD9D32000E9531 /* Resource.swift in Sources */,
 				B6E0562220DD7EB1003039CD /* ViewController.swift in Sources */,
 				B6E0562020DD7EB1003039CD /* AppDelegate.swift in Sources */,
@@ -361,6 +376,7 @@
 			files = (
 				B6C0616520DD9797000E9531 /* MarvelCharactersResourceTests.swift in Sources */,
 				B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */,
+				B6C0617A20DDA2ED000E9531 /* ThumbnailResourceTest.swift in Sources */,
 				B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */,
 				B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */,
 			);
