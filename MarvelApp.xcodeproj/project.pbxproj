@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0615D20DD95FB000E9531 /* FileHelper.swift */; };
 		B6E0562020DD7EB1003039CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0561F20DD7EB1003039CD /* AppDelegate.swift */; };
 		B6E0562220DD7EB1003039CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0562120DD7EB1003039CD /* ViewController.swift */; };
 		B6E0562520DD7EB1003039CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562320DD7EB1003039CD /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		B6E0563520DD7EB3003039CD /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0563420DD7EB3003039CD /* MarvelAppTests.swift */; };
 		B6E0564620DD8818003039CD /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564520DD8818003039CD /* characters.json */; };
 		B6E0564820DD8AE3003039CD /* character-1010684.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564720DD8AE3003039CD /* character-1010684.json */; };
+		B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0564D20DD93D3003039CD /* NibCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6C0615D20DD95FB000E9531 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		B6E0561C20DD7EB1003039CD /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E0561F20DD7EB1003039CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E0562120DD7EB1003039CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		B6E0563620DD7EB3003039CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E0564520DD8818003039CD /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		B6E0564720DD8AE3003039CD /* character-1010684.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "character-1010684.json"; sourceTree = "<group>"; };
+		B6E0564D20DD93D3003039CD /* NibCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				B6E0564120DD86BC003039CD /* Shared */,
 				B6E0564020DD86BA003039CD /* Mothers */,
 				B6E0563F20DD86B8003039CD /* Resources */,
+				B6E0564B20DD93C1003039CD /* Helper */,
 				B6E0563420DD7EB3003039CD /* MarvelAppTests.swift */,
 				B6E0563620DD7EB3003039CD /* Info.plist */,
 			);
@@ -124,6 +129,15 @@
 			children = (
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		B6E0564B20DD93C1003039CD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B6C0615D20DD95FB000E9531 /* FileHelper.swift */,
+				B6E0564D20DD93D3003039CD /* NibCreator.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +252,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */,
 				B6E0563520DD7EB3003039CD /* MarvelAppTests.swift in Sources */,
+				B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
