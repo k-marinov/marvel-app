@@ -13,6 +13,7 @@
 		B6E0562720DD7EB3003039CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562620DD7EB3003039CD /* Assets.xcassets */; };
 		B6E0562A20DD7EB3003039CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562820DD7EB3003039CD /* LaunchScreen.storyboard */; };
 		B6E0563520DD7EB3003039CD /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0563420DD7EB3003039CD /* MarvelAppTests.swift */; };
+		B6E0564620DD8818003039CD /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564520DD8818003039CD /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B6E0563020DD7EB3003039CD /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E0563420DD7EB3003039CD /* MarvelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppTests.swift; sourceTree = "<group>"; };
 		B6E0563620DD7EB3003039CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E0564520DD8818003039CD /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +92,51 @@
 		B6E0563320DD7EB3003039CD /* MarvelAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B6E0564320DD86C8003039CD /* New Group4 */,
+				B6E0564220DD86C6003039CD /* New Group3 */,
+				B6E0564120DD86BC003039CD /* New Group2 */,
+				B6E0564020DD86BA003039CD /* New Group1 */,
+				B6E0563F20DD86B8003039CD /* Resources */,
 				B6E0563420DD7EB3003039CD /* MarvelAppTests.swift */,
 				B6E0563620DD7EB3003039CD /* Info.plist */,
 			);
 			path = MarvelAppTests;
+			sourceTree = "<group>";
+		};
+		B6E0563F20DD86B8003039CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6E0564520DD8818003039CD /* characters.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6E0564020DD86BA003039CD /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		B6E0564120DD86BC003039CD /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		B6E0564220DD86C6003039CD /* New Group3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group3";
+			sourceTree = "<group>";
+		};
+		B6E0564320DD86C8003039CD /* New Group4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group4";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E0564620DD8818003039CD /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
