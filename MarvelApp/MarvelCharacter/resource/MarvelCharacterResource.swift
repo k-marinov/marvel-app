@@ -1,3 +1,5 @@
+import Foundation
+
 struct MarvelCharacterResource: Resource, TableViewItem {
 
     private(set) var name: String
@@ -24,8 +26,12 @@ struct MarvelCharacterResource: Resource, TableViewItem {
         return urls.filter { $0.isDetail() }.first?.websiteUrl()
     }
 
-    func imageUrl() -> String? {
-        return thumbnail.imageUrl()
+    func imageUrl() -> URL? {
+        if let imageUrl = thumbnail.imageUrl(),
+            let url = URL(string: imageUrl) {
+            return url
+        }
+        return nil
     }
 
     private enum CodingKeys: String, CodingKey {

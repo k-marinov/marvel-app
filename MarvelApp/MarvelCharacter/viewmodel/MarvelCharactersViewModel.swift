@@ -21,12 +21,12 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
         marvelCharactersService.findAllMarvelCharacters(
             with: MarvelCharactersRequest(),
             onCompleted: { [weak self] newMarvelCharacters in
-                self?.onMainQueue {
+                onMainQueue {
                     self?.dataSource.appendOnce(contentsOf: newMarvelCharacters)
                     onCompleted()
                 }
         }, onError: { [weak self]  apiError in
-            self?.onMainQueue {
+            onMainQueue {
                 onError()
             }
         })

@@ -6,7 +6,7 @@ class MarvelCharacterMother {
 
     static let description: String = "After the senseless murder of Squirrel Girl’s first partner Monkey Joe, Tippy Toe"
         + " remained by Squirrel Girl’s side and became her new partner."
-    static let imageUrl: String = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+    static let imageUrl: URL = URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!
     static let websiteUrl: String = "http://marvel.com/comics/characters/1011960/tippy_toe?utm_campaign="
     + "apiRef&utm_source=ff3d4847092294acc724123682af904b"
 

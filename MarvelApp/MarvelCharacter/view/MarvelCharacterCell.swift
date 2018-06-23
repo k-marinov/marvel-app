@@ -20,16 +20,30 @@ class MarvelCharacterCell: UITableViewCell, TableViewCell {
 
     func configureCell(with tableViewItem: TableViewItem) {
         resetContent()
+        loadContent(with: tableViewItem)
+    }
 
-        let character = tableViewItem as! MarvelCharacterResource
+    private func loadContent(with tableViewItem: TableViewItem) {
+        let character: MarvelCharacterResource = tableViewItem as! MarvelCharacterResource
+        setName(of: character)
+        loadImage(of: character)
+    }
+
+    private func setName(of character: MarvelCharacterResource) {
         nameLabel.text = character.name
-        ImageLoader.loadImage(url: character.imageUrl()) { [weak self] image in
-            self?.photoView.image = image
-        }
+    }
+
+    private func loadImage(of character: MarvelCharacterResource) {
+        ImageLoader.loadImage(url: character.imageUrl(), onSuccess: { image in
+            self.photoView.image = image
+        }, onError: {
+            self.photoView.image = nil
+        })
     }
 
     private func resetContent() {
         nameLabel.text = nil
+        photoView.image = nil
     }
 
 }
