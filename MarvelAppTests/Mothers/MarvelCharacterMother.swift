@@ -9,7 +9,9 @@ class MarvelCharacterMother {
     }
 
     class func emptyMarvelCharactersResource() -> MarvelCharactersResource {
-        return try! JSONDecoder().decode(MarvelCharactersResource.self, from: "{ \"data\": {\"results\": []}}".data(using: .utf8)!)
+        return try! JSONDecoder().decode(
+            MarvelCharactersResource.self,
+            from: "{ \"data\": {\"results\": []}}".data(using: .utf8)!)
     }
 
     class func marvelCharactersData() -> Data {
