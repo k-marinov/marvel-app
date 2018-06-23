@@ -24,4 +24,20 @@ class HttpResponseMother {
         return HttpResponse(response: response, data: value, error: NSError(domain: "network error", code: -1, userInfo: nil))
     }
 
+    class func successHttpUrlResponse() -> HTTPURLResponse {
+        return HTTPURLResponse(
+            url: URL(string: "http://www.marvel.com")!,
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil)!
+    }
+
+    class func failureHttpUrlResponse() -> HTTPURLResponse {
+        return HTTPURLResponse(
+            url: URL(string: "http://www.marvel.com")!,
+            statusCode: 400,
+            httpVersion: nil,
+            headerFields: nil)!
+    }
+
 }

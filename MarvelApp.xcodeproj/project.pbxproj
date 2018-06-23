@@ -40,6 +40,10 @@
 		B6A7A79A20DE81F3003CC418 /* MarvelCharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79920DE81F3003CC418 /* MarvelCharacterDetailRouter.swift */; };
 		B6A7A79C20DE8227003CC418 /* UtilityCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79B20DE8226003CC418 /* UtilityCreatable.swift */; };
 		B6A7A79E20DE827F003CC418 /* MarvelCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79D20DE827F003CC418 /* MarvelCharacterService.swift */; };
+		B6A7A7A020DE8CAB003CC418 /* MockComponentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79F20DE8CAB003CC418 /* MockComponentCreator.swift */; };
+		B6A7A7A220DE8D5C003CC418 /* MockMarvelCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7A120DE8D5C003CC418 /* MockMarvelCharacterService.swift */; };
+		B6A7A7A420DE8E5A003CC418 /* MarvelCharacterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7A320DE8E5A003CC418 /* MarvelCharacterServiceTests.swift */; };
+		B6A7A7A620DE90DF003CC418 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A7A520DE90DF003CC418 /* MockURLProtocol.swift */; };
 		B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0615D20DD95FB000E9531 /* FileHelper.swift */; };
 		B6C0616520DD9797000E9531 /* MarvelCharactersResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */; };
 		B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */; };
@@ -105,6 +109,10 @@
 		B6A7A79920DE81F3003CC418 /* MarvelCharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailRouter.swift; sourceTree = "<group>"; };
 		B6A7A79B20DE8226003CC418 /* UtilityCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityCreatable.swift; sourceTree = "<group>"; };
 		B6A7A79D20DE827F003CC418 /* MarvelCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterService.swift; sourceTree = "<group>"; };
+		B6A7A79F20DE8CAB003CC418 /* MockComponentCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComponentCreator.swift; sourceTree = "<group>"; };
+		B6A7A7A120DE8D5C003CC418 /* MockMarvelCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarvelCharacterService.swift; sourceTree = "<group>"; };
+		B6A7A7A320DE8E5A003CC418 /* MarvelCharacterServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterServiceTests.swift; sourceTree = "<group>"; };
+		B6A7A7A520DE90DF003CC418 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B6C0615D20DD95FB000E9531 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersResourceTests.swift; sourceTree = "<group>"; };
 		B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterMother.swift; sourceTree = "<group>"; };
@@ -217,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				B6A7A77A20DE765D003CC418 /* MockMarvelCharactersRequest.swift */,
+				B6A7A79F20DE8CAB003CC418 /* MockComponentCreator.swift */,
+				B6A7A7A120DE8D5C003CC418 /* MockMarvelCharacterService.swift */,
+				B6A7A7A520DE90DF003CC418 /* MockURLProtocol.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -296,6 +307,7 @@
 		B6C0616220DD9774000E9531 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A7A320DE8E5A003CC418 /* MarvelCharacterServiceTests.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -619,13 +631,17 @@
 			files = (
 				B6C0616520DD9797000E9531 /* MarvelCharactersResourceTests.swift in Sources */,
 				B6A7A76D20DE4E7F003CC418 /* ApiResponseTests.swift in Sources */,
+				B6A7A7A020DE8CAB003CC418 /* MockComponentCreator.swift in Sources */,
 				B6A7A76920DE4E26003CC418 /* HttpResponseMother.swift in Sources */,
 				B6C0617C20DDA355000E9531 /* ThumbnailMother.swift in Sources */,
 				B6C0618420DE2BF4000E9531 /* UrlResourceMother.swift in Sources */,
 				B6A7A74D20DE3BD0003CC418 /* MarvelCharacterResourceTests.swift in Sources */,
 				B6A7A77120DE523A003CC418 /* ApiRequestTests.swift in Sources */,
+				B6A7A7A620DE90DF003CC418 /* MockURLProtocol.swift in Sources */,
 				B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */,
 				B6C0617A20DDA2ED000E9531 /* ThumbnailResourceTests.swift in Sources */,
+				B6A7A7A420DE8E5A003CC418 /* MarvelCharacterServiceTests.swift in Sources */,
+				B6A7A7A220DE8D5C003CC418 /* MockMarvelCharacterService.swift in Sources */,
 				B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */,
 				B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */,
 				B6A7A77F20DE7822003CC418 /* MarvelCharactersRequestTest.swift in Sources */,

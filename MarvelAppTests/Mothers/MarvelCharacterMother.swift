@@ -79,8 +79,11 @@ class MarvelCharacterMother {
     }
 
     class func marvelCharactersResource() -> MarvelCharactersResource {
-        let data = FileHelper().createData(fromFilename: "characters", ofType: "json")!
-        return try! JSONDecoder().decode(MarvelCharactersResource.self, from: data)
+        return try! JSONDecoder().decode(MarvelCharactersResource.self, from: marvelCharactersJsonData())
+    }
+
+    class func marvelCharactersJsonData() -> Data {
+        return FileHelper().createData(fromFilename: "characters", ofType: "json")!
     }
 
     class func emptyMarvelCharactersResource() -> MarvelCharactersResource {
