@@ -18,8 +18,14 @@ class MarvelCharactersViewControllerTests: XCTestCase, ViewControllerCreatable {
         let viewModel = MockMarvelCharactersViewModel(with: creator)
         let viewController = marvelCharactersViewController(viewModel: viewModel)
          _ = viewController.view
-
         XCTAssertTrue(viewModel.isLoadAllMarvelCharactersCalled)
+    }
+
+    func testViewDidLoad_whenLoaded_setsNavigationBarTitleToCharacters() {
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewController = marvelCharactersViewController(viewModel: viewModel)
+        _ = viewController.view
+        XCTAssertEqual(viewController.navigationItem.title, "Characters")
     }
 
     private func marvelCharactersViewController(viewModel: ViewModel) -> MarvelCharactersViewController {
