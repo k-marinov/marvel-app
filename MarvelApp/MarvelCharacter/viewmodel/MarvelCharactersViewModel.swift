@@ -25,7 +25,7 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
                     self?.dataSource.appendOnce(contentsOf: newMarvelCharacters)
                     onCompleted()
                 }
-        }, onError: { [weak self]  apiError in
+        }, onError: { apiError in
             onMainQueue {
                 onError()
             }
@@ -33,6 +33,7 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
     }
 
     func onSelected(indexPath: IndexPath) {
+        print("selected", indexPath)
         // TODO: navigate to details
     }
 

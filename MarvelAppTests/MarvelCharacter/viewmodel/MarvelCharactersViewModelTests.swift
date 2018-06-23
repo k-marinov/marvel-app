@@ -12,6 +12,13 @@ class MarvelCharactersViewModelTests: XCTestCase {
         viewModel = MarvelCharactersViewModel(with: creator)
     }
 
+    func testOnSelectedRow_whenTableViewDidSelectRowTapped_returnsIndexPath() {
+        let indexPath = IndexPath(item: 1, section: 0)
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        viewModel.delegate.tableView(UITableView(frame: CGRect.zero), didSelectRowAt: indexPath)
+        XCTAssertEqual(viewModel.selectedIndexPath, indexPath)
+    }
+
     func testLoadMarvelCharacters_whenSuccess_callsOnStartedOnMainQueue() {
         var isCalled: Bool = false
         var isMainThread: Bool = false
