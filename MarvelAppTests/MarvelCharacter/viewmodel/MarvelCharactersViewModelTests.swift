@@ -12,7 +12,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
         viewModel = MarvelCharactersViewModel(with: creator)
     }
 
-    func testLoadMarvelCharacters_whenSuccess_callOnStartedOnMainQueue() {
+    func testLoadMarvelCharacters_whenSuccess_callsOnStartedOnMainQueue() {
         var isCalled: Bool = false
         var isMainThread: Bool = false
 
@@ -32,7 +32,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
         XCTAssertEqual(isMainThread, true)
     }
 
-    func testLoadMarvelCharacters_whenSuccess_callOnCompletedOnMainQueue() {
+    func testLoadMarvelCharacters_whenSuccess_callsOnCompletedOnMainQueue() {
         var isCalled: Bool = false
         var isMainThread: Bool = false
 
@@ -52,7 +52,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
         XCTAssertEqual(isMainThread, true)
     }
 
-    func testLoadMarvelCharacters_whenFails_callOnErrordOnMainQueue() {
+    func testLoadMarvelCharacters_whenFails_callsOnErrordOnMainQueue() {
         var isCalled: Bool = false
         var isMainThread: Bool = false
 
@@ -70,6 +70,20 @@ class MarvelCharactersViewModelTests: XCTestCase {
 
         XCTAssertEqual(isCalled, true)
         XCTAssertEqual(isMainThread, true)
+    }
+
+    func testLoadMarvelCharacters_whenSuccess_appendsToDataSource() {
+        MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
+        let expectation = XCTestExpectation(description: "")
+        viewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {
+        }, onCompleted: {
+            expectation.fulfill()
+        }, onError: {
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: Constants.timeout)
+
+        XCTAssertEqual(viewModel.dataSource.count(), 3)
     }
 
 }

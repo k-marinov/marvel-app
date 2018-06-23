@@ -1,11 +1,14 @@
 import Foundation
 
-class MarvelCharactersViewModel: ViewModel {
+class MarvelCharactersViewModel: ViewModel, RowSelectable {
 
     private var marvelCharactersService: MarvelCharacterService
+    private(set) var dataSource = TableViewDataSource<MarvelCharacterResource, MarvelCharacterCell>()
+    private(set) var delegate: TableViewDelegate!
 
     required init(with componentCreatable: ComponentCreatable) {
         marvelCharactersService = componentCreatable.create(with: componentCreatable)
+        delegate = TableViewDelegate(rowSelectable: self)
     }
 
     func loadAllMarvelCharacters(
@@ -19,6 +22,7 @@ class MarvelCharactersViewModel: ViewModel {
             with: MarvelCharactersRequest(),
             onCompleted: { [weak self] newMarvelCharacters in
                 self?.onMainQueue {
+                    self?.dataSource.appendOnce(contentsOf: newMarvelCharacters)
                     onCompleted()
                 }
         }, onError: { [weak self]  apiError in
@@ -26,6 +30,10 @@ class MarvelCharactersViewModel: ViewModel {
                 onError()
             }
         })
+    }
+
+    func onSelected(indexPath: IndexPath) {
+        // TODO: navigate to details
     }
 
 }

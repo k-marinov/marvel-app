@@ -1,4 +1,4 @@
-struct MarvelCharacterResource: Resource {
+struct MarvelCharacterResource: Resource, TableViewItem {
 
     private(set) var name: String
     private var description: String
