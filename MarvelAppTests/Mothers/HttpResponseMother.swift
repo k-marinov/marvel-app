@@ -10,7 +10,7 @@ class HttpResponseMother {
             statusCode: statusCode,
             httpVersion: "1.0",
             headerFields: nil)
-        let value: Data = "{ }".data(using: String.Encoding.utf8)!
+        let value: Data = "{ \"data\": {\"results\": []}}".data(using: String.Encoding.utf8)!
         return HttpResponse(response: response, data: value, error: nil)
     }
 
