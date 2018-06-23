@@ -5,13 +5,14 @@ import Foundation
 class MockComponentCreator: ComponentCreatable {
 
     var marvelCharacterService: MarvelCharacterService!
-    var mockUrlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default
 
     init() {
     }
 
     func create() -> HttpClient {
-        return HttpClient(urlSessionConfiguration: mockUrlSessionConfiguration)
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        return HttpClient(urlSessionConfiguration: configuration)
     }
 
     func mockMarvelCharacterService() -> MockMarvelCharacterService {

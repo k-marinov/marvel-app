@@ -10,23 +10,12 @@ class MarvelCharacterServiceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let configuration = URLSessionConfiguration.ephemeral
-        configuration.protocolClasses = [MockURLProtocol.self]
-        creator.mockUrlSessionConfiguration = configuration
         service = MarvelCharacterService(with: creator)
-    }
-
-    override func tearDown() {
-        super.tearDown()
     }
 
     func testFindAllMarvelCharacters_whenSuccess_returnsListOfCharacters() {
         var marvelCharacters: [MarvelCharacterResource] = [MarvelCharacterResource]()
-        MockURLProtocol.requestHandler = { request in
-            XCTAssertEqual(request.url?.absoluteString.hasPrefix("http://gateway.marvel.com/v1/public/characters"), true)
-            return (HttpResponseMother.successHttpUrlResponse(),
-                    MarvelCharacterMother.marvelCharactersJsonData())
-        }
+        MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
 
         let expectation = XCTestExpectation(description: "")
         service.findAllMarvelCharacters(with: MarvelCharactersRequest(), onCompleted: { newMarvelCharacters in
@@ -40,14 +29,10 @@ class MarvelCharacterServiceTests: XCTestCase {
         XCTAssertEqual(marvelCharacters.count, 3)
     }
 
-    func testFindAllMarvelCharacters_whenFail_returnsEmptyList() {
+    func testFindAllMarvelCharacters_whenFail_returnsApiErrorTypeClient() {
         var marvelCharacters: [MarvelCharacterResource] = [MarvelCharacterResource]()
         var apiError: ApiError?
-
-        MockURLProtocol.requestHandler = { request in
-            XCTAssertEqual(request.url?.absoluteString.hasPrefix("http://gateway.marvel.com/v1/public/characters"), true)
-            return (HttpResponseMother.failureHttpUrlResponse(), Data())
-        }
+        MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersFailureResponse()
 
         let expectation = XCTestExpectation(description: "")
         service.findAllMarvelCharacters(with: MarvelCharactersRequest(), onCompleted: { newMarvelCharacters in
