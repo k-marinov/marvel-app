@@ -4,9 +4,12 @@ import XCTest
 
 class MarvelCharacterResourceTests: XCTestCase {
 
-    func testWebsiteUrl_whenHasEmptyJsonData_returnsEmptyValues() {
+    func testInitialize_whenHasEmptyJsonData_returnsResourceWithDefaultValues() {
         let resource: MarvelCharacterResource = MarvelCharacterMother.emptyMarvelCharacter()
         XCTAssertEqual(resource.name, "")
+        XCTAssertEqual(resource.descriptionWithFallback(), "There is no description for this character".localized())
+        XCTAssertNil(resource.imageUrl())
+        XCTAssertNil(resource.detailWebsiteUrl())
     }
 
 }
