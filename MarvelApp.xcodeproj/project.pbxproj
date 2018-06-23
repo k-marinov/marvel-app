@@ -16,6 +16,7 @@
 		B6A7A76020DE4D6D003CC418 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A75E20DE4D6D003CC418 /* HttpStatusCode.swift */; };
 		B6A7A76120DE4D6D003CC418 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A75F20DE4D6D003CC418 /* HttpMethod.swift */; };
 		B6A7A76320DE4D7E003CC418 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A76220DE4D7E003CC418 /* HttpResponse.swift */; };
+		B6A7A76720DE4DBF003CC418 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A76620DE4DBF003CC418 /* ApiError.swift */; };
 		B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0615D20DD95FB000E9531 /* FileHelper.swift */; };
 		B6C0616520DD9797000E9531 /* MarvelCharactersResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */; };
 		B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */; };
@@ -57,6 +58,7 @@
 		B6A7A75E20DE4D6D003CC418 /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		B6A7A75F20DE4D6D003CC418 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		B6A7A76220DE4D7E003CC418 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		B6A7A76620DE4DBF003CC418 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		B6C0615D20DD95FB000E9531 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersResourceTests.swift; sourceTree = "<group>"; };
 		B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterMother.swift; sourceTree = "<group>"; };
@@ -123,11 +125,28 @@
 		B6A7A75D20DE4D60003CC418 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A76520DE4DAC003CC418 /* http */,
+				B6A7A76420DE4DA9003CC418 /* error */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B6A7A76420DE4DA9003CC418 /* error */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A76620DE4DBF003CC418 /* ApiError.swift */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
+		B6A7A76520DE4DAC003CC418 /* http */ = {
+			isa = PBXGroup;
+			children = (
 				B6A7A76220DE4D7E003CC418 /* HttpResponse.swift */,
 				B6A7A75F20DE4D6D003CC418 /* HttpMethod.swift */,
 				B6A7A75E20DE4D6D003CC418 /* HttpStatusCode.swift */,
 			);
-			path = model;
+			path = http;
 			sourceTree = "<group>";
 		};
 		B6C0615F20DD9754000E9531 /* MarvelCharacter */ = {
@@ -433,6 +452,7 @@
 				B6C0617820DDA2BD000E9531 /* ThumbnailResource.swift in Sources */,
 				B6C0617420DDA00A000E9531 /* MarvelCharacterResource.swift in Sources */,
 				B6C0617620DDA24A000E9531 /* MarvelCharactersDataResource.swift in Sources */,
+				B6A7A76720DE4DBF003CC418 /* ApiError.swift in Sources */,
 				B6C0617220DD9D32000E9531 /* Resource.swift in Sources */,
 				B6E0562220DD7EB1003039CD /* ViewController.swift in Sources */,
 				B6A7A75A20DE45B9003CC418 /* String+Extension.swift in Sources */,
