@@ -27,6 +27,19 @@
 		B6A7A77B20DE765D003CC418 /* MockMarvelCharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A77A20DE765D003CC418 /* MockMarvelCharactersRequest.swift */; };
 		B6A7A77D20DE776C003CC418 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A77C20DE776C003CC418 /* Constants.swift */; };
 		B6A7A77F20DE7822003CC418 /* MarvelCharactersRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A77E20DE7822003CC418 /* MarvelCharactersRequestTest.swift */; };
+		B6A7A78120DE79B0003CC418 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78020DE79B0003CC418 /* HttpClient.swift */; };
+		B6A7A78320DE7A98003CC418 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78220DE7A98003CC418 /* ApiClient.swift */; };
+		B6A7A78920DE7EAC003CC418 /* RemoteCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78420DE7EAB003CC418 /* RemoteCreatable.swift */; };
+		B6A7A78A20DE7EAC003CC418 /* ServiceCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78520DE7EAC003CC418 /* ServiceCreatable.swift */; };
+		B6A7A78B20DE7EAC003CC418 /* ComponentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78620DE7EAC003CC418 /* ComponentCreator.swift */; };
+		B6A7A78C20DE7EAC003CC418 /* RouterCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78720DE7EAC003CC418 /* RouterCreatable.swift */; };
+		B6A7A78D20DE7EAC003CC418 /* ComponentCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78820DE7EAC003CC418 /* ComponentCreatable.swift */; };
+		B6A7A79020DE7EF3003CC418 /* MarvelCharacterRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A78F20DE7EF3003CC418 /* MarvelCharacterRemote.swift */; };
+		B6A7A79320DE8198003CC418 /* MarvelAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79220DE8198003CC418 /* MarvelAppRouter.swift */; };
+		B6A7A79620DE81BB003CC418 /* MarvelCharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79520DE81BB003CC418 /* MarvelCharactersRouter.swift */; };
+		B6A7A79A20DE81F3003CC418 /* MarvelCharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79920DE81F3003CC418 /* MarvelCharacterDetailRouter.swift */; };
+		B6A7A79C20DE8227003CC418 /* UtilityCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79B20DE8226003CC418 /* UtilityCreatable.swift */; };
+		B6A7A79E20DE827F003CC418 /* MarvelCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7A79D20DE827F003CC418 /* MarvelCharacterService.swift */; };
 		B6C0615E20DD95FB000E9531 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0615D20DD95FB000E9531 /* FileHelper.swift */; };
 		B6C0616520DD9797000E9531 /* MarvelCharactersResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */; };
 		B6C0616720DD989E000E9531 /* MarvelCharacterMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */; };
@@ -79,6 +92,19 @@
 		B6A7A77A20DE765D003CC418 /* MockMarvelCharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarvelCharactersRequest.swift; sourceTree = "<group>"; };
 		B6A7A77C20DE776C003CC418 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6A7A77E20DE7822003CC418 /* MarvelCharactersRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersRequestTest.swift; sourceTree = "<group>"; };
+		B6A7A78020DE79B0003CC418 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		B6A7A78220DE7A98003CC418 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		B6A7A78420DE7EAB003CC418 /* RemoteCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCreatable.swift; sourceTree = "<group>"; };
+		B6A7A78520DE7EAC003CC418 /* ServiceCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCreatable.swift; sourceTree = "<group>"; };
+		B6A7A78620DE7EAC003CC418 /* ComponentCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCreator.swift; sourceTree = "<group>"; };
+		B6A7A78720DE7EAC003CC418 /* RouterCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterCreatable.swift; sourceTree = "<group>"; };
+		B6A7A78820DE7EAC003CC418 /* ComponentCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentCreatable.swift; sourceTree = "<group>"; };
+		B6A7A78F20DE7EF3003CC418 /* MarvelCharacterRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterRemote.swift; sourceTree = "<group>"; };
+		B6A7A79220DE8198003CC418 /* MarvelAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppRouter.swift; sourceTree = "<group>"; };
+		B6A7A79520DE81BB003CC418 /* MarvelCharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersRouter.swift; sourceTree = "<group>"; };
+		B6A7A79920DE81F3003CC418 /* MarvelCharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailRouter.swift; sourceTree = "<group>"; };
+		B6A7A79B20DE8226003CC418 /* UtilityCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityCreatable.swift; sourceTree = "<group>"; };
+		B6A7A79D20DE827F003CC418 /* MarvelCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterService.swift; sourceTree = "<group>"; };
 		B6C0615D20DD95FB000E9531 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		B6C0616420DD9797000E9531 /* MarvelCharactersResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersResourceTests.swift; sourceTree = "<group>"; };
 		B6C0616620DD989E000E9531 /* MarvelCharacterMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterMother.swift; sourceTree = "<group>"; };
@@ -195,6 +221,47 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		B6A7A78E20DE7EE6003CC418 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A78F20DE7EF3003CC418 /* MarvelCharacterRemote.swift */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		B6A7A79120DE8183003CC418 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A79220DE8198003CC418 /* MarvelAppRouter.swift */,
+			);
+			name = router;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6A7A79420DE81AF003CC418 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A79520DE81BB003CC418 /* MarvelCharactersRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		B6A7A79720DE81D8003CC418 /* MarvelCharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A79820DE81E9003CC418 /* router */,
+			);
+			path = MarvelCharacterDetail;
+			sourceTree = "<group>";
+		};
+		B6A7A79820DE81E9003CC418 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				B6A7A79920DE81F3003CC418 /* MarvelCharacterDetailRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		B6C0615F20DD9754000E9531 /* MarvelCharacter */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +286,9 @@
 		B6C0616120DD976D000E9531 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B6E0562120DD7EB1003039CD /* ViewController.swift */,
+				B6E0561F20DD7EB1003039CD /* AppDelegate.swift */,
+				B6A7A79120DE8183003CC418 /* router */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -241,6 +311,8 @@
 		B6C0616820DD9A69000E9531 /* MarvelCharacter */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A79420DE81AF003CC418 /* router */,
+				B6A7A78E20DE7EE6003CC418 /* remote */,
 				B6C0616C20DD9A87000E9531 /* viewcontroller */,
 				B6C0616B20DD9A81000E9531 /* service */,
 				B6C0616A20DD9A7C000E9531 /* request */,
@@ -272,6 +344,7 @@
 		B6C0616B20DD9A81000E9531 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A79D20DE827F003CC418 /* MarvelCharacterService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -297,6 +370,11 @@
 		B6C0617020DD9D17000E9531 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A78420DE7EAB003CC418 /* RemoteCreatable.swift */,
+				B6A7A78520DE7EAC003CC418 /* ServiceCreatable.swift */,
+				B6A7A78720DE7EAC003CC418 /* RouterCreatable.swift */,
+				B6A7A79B20DE8226003CC418 /* UtilityCreatable.swift */,
+				B6A7A78820DE7EAC003CC418 /* ComponentCreatable.swift */,
 				B6A7A77320DE52DB003CC418 /* ApiRequest.swift */,
 				B6C0617120DD9D32000E9531 /* Resource.swift */,
 			);
@@ -306,6 +384,9 @@
 		B6C0617E20DDA85D000E9531 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				B6A7A78620DE7EAC003CC418 /* ComponentCreator.swift */,
+				B6A7A78220DE7A98003CC418 /* ApiClient.swift */,
+				B6A7A78020DE79B0003CC418 /* HttpClient.swift */,
 				B6C0617F20DDA891000E9531 /* StringUtil.swift */,
 			);
 			path = util;
@@ -333,9 +414,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C0616120DD976D000E9531 /* App */,
-				B6E0561F20DD7EB1003039CD /* AppDelegate.swift */,
-				B6E0562120DD7EB1003039CD /* ViewController.swift */,
 				B6C0616820DD9A69000E9531 /* MarvelCharacter */,
+				B6A7A79720DE81D8003CC418 /* MarvelCharacterDetail */,
 				B6C0616F20DD9D0D000E9531 /* Shared */,
 				B6A7A75420DE44AB003CC418 /* SupportFiles */,
 			);
@@ -499,22 +579,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C0618020DDA891000E9531 /* StringUtil.swift in Sources */,
+				B6A7A78D20DE7EAC003CC418 /* ComponentCreatable.swift in Sources */,
 				B6C0618220DE2BDB000E9531 /* UrlResource.swift in Sources */,
 				B6A7A76120DE4D6D003CC418 /* HttpMethod.swift in Sources */,
 				B6A7A77620DE52FB003CC418 /* ApiRequestError.swift in Sources */,
+				B6A7A79620DE81BB003CC418 /* MarvelCharactersRouter.swift in Sources */,
+				B6A7A78B20DE7EAC003CC418 /* ComponentCreator.swift in Sources */,
 				B6C0616E20DD9CF2000E9531 /* MarvelCharactersResource.swift in Sources */,
 				B6A7A75C20DE47B8003CC418 /* Array+Extension.swift in Sources */,
 				B6A7A76F20DE4EF4003CC418 /* ApiResponse.swift in Sources */,
 				B6C0617820DDA2BD000E9531 /* ThumbnailResource.swift in Sources */,
 				B6C0617420DDA00A000E9531 /* MarvelCharacterResource.swift in Sources */,
+				B6A7A79020DE7EF3003CC418 /* MarvelCharacterRemote.swift in Sources */,
 				B6C0617620DDA24A000E9531 /* MarvelCharactersDataResource.swift in Sources */,
+				B6A7A78120DE79B0003CC418 /* HttpClient.swift in Sources */,
 				B6A7A76720DE4DBF003CC418 /* ApiError.swift in Sources */,
 				B6C0617220DD9D32000E9531 /* Resource.swift in Sources */,
+				B6A7A78C20DE7EAC003CC418 /* RouterCreatable.swift in Sources */,
+				B6A7A79A20DE81F3003CC418 /* MarvelCharacterDetailRouter.swift in Sources */,
+				B6A7A78920DE7EAC003CC418 /* RemoteCreatable.swift in Sources */,
+				B6A7A79C20DE8227003CC418 /* UtilityCreatable.swift in Sources */,
 				B6E0562220DD7EB1003039CD /* ViewController.swift in Sources */,
+				B6A7A78320DE7A98003CC418 /* ApiClient.swift in Sources */,
 				B6A7A75A20DE45B9003CC418 /* String+Extension.swift in Sources */,
 				B6A7A76020DE4D6D003CC418 /* HttpStatusCode.swift in Sources */,
 				B6A7A76320DE4D7E003CC418 /* HttpResponse.swift in Sources */,
+				B6A7A78A20DE7EAC003CC418 /* ServiceCreatable.swift in Sources */,
 				B6E0562020DD7EB1003039CD /* AppDelegate.swift in Sources */,
+				B6A7A79E20DE827F003CC418 /* MarvelCharacterService.swift in Sources */,
+				B6A7A79320DE8198003CC418 /* MarvelAppRouter.swift in Sources */,
 				B6A7A77820DE74C9003CC418 /* MarvelCharactersRequest.swift in Sources */,
 				B6A7A77420DE52DB003CC418 /* ApiRequest.swift in Sources */,
 			);

@@ -7,14 +7,14 @@ struct MarvelCharactersResource: Resource {
         data = try value.decode(MarvelCharactersDataResource.self, forKey: .data)
     }
 
+    func characters() -> [MarvelCharacterResource] {
+        return data.characters
+    }
+
     private enum CodingKeys: String, CodingKey {
 
         case data
 
-    }
-
-    func characters() -> [MarvelCharacterResource] {
-        return data.characters
     }
 
 }
