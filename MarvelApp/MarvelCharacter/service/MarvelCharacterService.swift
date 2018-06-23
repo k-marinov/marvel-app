@@ -1,6 +1,5 @@
 class MarvelCharacterService {
 
-
     private var marvelCharacterRemote: MarvelCharacterRemote
 
     required init(with componentCreatable: ComponentCreatable) {
