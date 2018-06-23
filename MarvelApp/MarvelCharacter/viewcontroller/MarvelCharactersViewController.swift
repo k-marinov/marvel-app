@@ -28,7 +28,7 @@ class MarvelCharactersViewController: UIViewController, ModelableViewController 
     }
 
     private func loadContent() {
-        marvelCharactersViewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {[weak self] in
+        marvelCharactersViewModel.loadAllMarvelCharacters(onStarted: {[weak self] in
             self?.activityIndicatorView.startAnimating()
         }, onCompleted: { [weak self] in
             self?.activityIndicatorView.stopAnimating()

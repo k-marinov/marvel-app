@@ -25,7 +25,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {
+        viewModel.loadAllMarvelCharacters(onStarted: {
             isCalled = true
             isMainThread = Thread.isMainThread
             expectation.fulfill()
@@ -45,7 +45,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {
+        viewModel.loadAllMarvelCharacters(onStarted: {
         }, onCompleted: {
             isCalled = true
             isMainThread = Thread.isMainThread
@@ -65,7 +65,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersFailureResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {
+        viewModel.loadAllMarvelCharacters(onStarted: {
         }, onCompleted: {
             expectation.fulfill()
         }, onError: {
@@ -82,7 +82,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
     func testLoadMarvelCharacters_whenSuccess_appendsToDataSource() {
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(with: MarvelCharactersRequest(), onStarted: {
+        viewModel.loadAllMarvelCharacters(onStarted: {
         }, onCompleted: {
             expectation.fulfill()
         }, onError: {

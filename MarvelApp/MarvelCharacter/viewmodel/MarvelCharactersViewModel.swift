@@ -12,7 +12,6 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
     }
 
     func loadAllMarvelCharacters(
-        with request: MarvelCharactersRequest,
         onStarted: @escaping () -> Void,
         onCompleted: @escaping () -> Void,
         onError: @escaping () -> Void) {
@@ -25,10 +24,10 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
                     self?.dataSource.appendOnce(contentsOf: newMarvelCharacters)
                     onCompleted()
                 }
-        }, onError: { apiError in
-            onMainQueue {
-                onError()
-            }
+            }, onError: { apiError in
+                onMainQueue {
+                    onError()
+                }
         })
     }
 
