@@ -12,4 +12,22 @@ class MarvelCharacterResourceTests: XCTestCase {
         XCTAssertNil(resource.detailWebsiteUrl())
     }
 
+    func testInitialize_whenHasValidJsonData_returnsResourceWithDecodedValues() {
+        let resource: MarvelCharacterResource = MarvelCharacterMother.marvelCharacterWithDescription()
+        XCTAssertEqual(resource.name, "Tippy Toe")
+        XCTAssertEqual(resource.descriptionWithFallback(), MarvelCharacterMother.description)
+        XCTAssertEqual(resource.imageUrl(), MarvelCharacterMother.imageUrl)
+        XCTAssertEqual(resource.detailWebsiteUrl(), MarvelCharacterMother.websiteUrl)
+    }
+
+    func testDetailWebsiteUrl_whenDoesNotHaveUrlWithDetailType_returnsNil() {
+        let resource: MarvelCharacterResource = MarvelCharacterMother.marvelCharacterWithoutUrlDetailType()
+        XCTAssertNil(resource.detailWebsiteUrl())
+    }
+
+    func testDetailWebsiteUrl_whenHasUrlWithDetailTypeAndEmptyUrl_returnsNil() {
+        let resource: MarvelCharacterResource = MarvelCharacterMother.marvelCharacterWithUrlDetailTypeAndEmptyUrl()
+        XCTAssertNil(resource.detailWebsiteUrl())
+    }
+
 }

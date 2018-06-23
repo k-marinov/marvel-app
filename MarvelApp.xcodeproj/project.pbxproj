@@ -31,7 +31,6 @@
 		B6E0562720DD7EB3003039CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562620DD7EB3003039CD /* Assets.xcassets */; };
 		B6E0562A20DD7EB3003039CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562820DD7EB3003039CD /* LaunchScreen.storyboard */; };
 		B6E0564620DD8818003039CD /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564520DD8818003039CD /* characters.json */; };
-		B6E0564820DD8AE3003039CD /* character-1010684.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564720DD8AE3003039CD /* character-1010684.json */; };
 		B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0564D20DD93D3003039CD /* NibCreator.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +73,6 @@
 		B6E0563020DD7EB3003039CD /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E0563620DD7EB3003039CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E0564520DD8818003039CD /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
-		B6E0564720DD8AE3003039CD /* character-1010684.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "character-1010684.json"; sourceTree = "<group>"; };
 		B6E0564D20DD93D3003039CD /* NibCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				B6E0564520DD8818003039CD /* characters.json */,
-				B6E0564720DD8AE3003039CD /* character-1010684.json */,
 				B6A7A74E20DE3D0F003CC418 /* character-1011960.json */,
 			);
 			path = Resources;
@@ -401,7 +398,6 @@
 			files = (
 				B6A7A74F20DE3D0F003CC418 /* character-1011960.json in Resources */,
 				B6E0564620DD8818003039CD /* characters.json in Resources */,
-				B6E0564820DD8AE3003039CD /* character-1010684.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
