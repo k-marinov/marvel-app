@@ -3,12 +3,12 @@ import UIKit
 class MarvelCharactersViewController: UIViewController, ModelableViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     private(set) lazy var marvelCharactersViewModel: MarvelCharactersViewModel = {
         return self.viewModel as! MarvelCharactersViewModel
     }()
     var viewModel: ViewModel!
 
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
