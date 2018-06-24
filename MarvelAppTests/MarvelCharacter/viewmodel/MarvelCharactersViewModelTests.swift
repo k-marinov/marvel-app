@@ -4,25 +4,27 @@ import XCTest
 
 class MarvelCharactersViewModelTests: XCTestCase {
 
-    let creator: MockComponentCreator = MockComponentCreator.buildAllMocks()
+    var creator: MockComponentCreator!
     var viewModel: MarvelCharactersViewModel!
+    var delegate: MockMarvelCharactersViewModelDelegate!
 
-    override func setUp() {
-        super.setUp()
+    func beforeEach() {
+        creator = MockComponentCreator.buildAllMocks()
         viewModel = MarvelCharactersViewModel(with: creator)
+        delegate = MockMarvelCharactersViewModelDelegate()
+        viewModel.delegate = delegate
     }
 
     func testOnSelectedRow_whenTableViewDidSelectRowTapped_showsCharacterDetail() {
         let indexPath = IndexPath(item: 1, section: 0)
-        let viewModel = MarvelCharactersViewModel(with: creator)
+        beforeEach()
         viewModel.tableViewDataSource.appendOnce(contentsOf: MarvelCharacterMother.marvelCharactersResource().characters())
         viewModel.tableViewDelegate.tableView(UITableView(frame: CGRect.zero), didSelectRowAt: indexPath)
         XCTAssertEqual(creator.mockMarvelCharacterDetailRouter().isShowMarvelCharacterCalled, true)
     }
 
     func testLoadMarvelCharacters_whenSuccess_callsOnStartedOnMainQueue() {
-        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
-        viewModel.delegate = delegate
+        beforeEach()
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
@@ -36,8 +38,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
     }
 
     func testLoadMarvelCharacters_whenSuccess_callsOnCompletedOnMainQueue() {
-        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
-        viewModel.delegate = delegate
+        beforeEach()
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
@@ -51,8 +52,7 @@ class MarvelCharactersViewModelTests: XCTestCase {
     }
 
     func testLoadMarvelCharacters_whenFails_callsOnErrordOnMainQueue() {
-        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
-        viewModel.delegate = delegate
+        beforeEach()
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersFailureResponse()
         let expectation = XCTestExpectation(description: "")
@@ -66,10 +66,10 @@ class MarvelCharactersViewModelTests: XCTestCase {
     }
 
     func testLoadMarvelCharacters_whenSuccess_appendsToDataSource() {
-        viewModel.delegate = nil
+        beforeEach()
 
-        MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
+        MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         viewModel.loadAllMarvelCharacters(onCompleted: {
             expectation.fulfill()
         })

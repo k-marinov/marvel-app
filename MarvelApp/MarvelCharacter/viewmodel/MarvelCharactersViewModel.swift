@@ -21,27 +21,32 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
         marvelCharactersService.findAllMarvelCharacters(
             with: MarvelCharactersRequest(),
             onCompleted: { [weak self] newMarvelCharacters in
-                self?.onLoadCompleted(with: newMarvelCharacters)
-                onCompleted?()
+                self?.onLoadCompleted(with: newMarvelCharacters) {
+                    onCompleted?()
+                }
             }, onError: { [weak self] apiError in
-                self?.onLoadCompleted(with : apiError)
-                onCompleted?()
+                self?.onLoadCompleted(with : apiError) {
+                    onCompleted?()
+                }
+
         })
     }
 
-    private func onLoadCompleted(with newMarvelCharacters: [MarvelCharacterResource]) {
+    private func onLoadCompleted(with newMarvelCharacters: [MarvelCharacterResource], onCompleted: (()-> Void)? = nil) {
         onMainQueue { [weak self] in
             self?.tableViewDataSource.appendOnce(contentsOf: newMarvelCharacters)
             self?.delegate?.onLoadContentCompleted()
+            onCompleted?()
         }
     }
 
-    private func onLoadCompleted(with error: ApiError) {
+    private func onLoadCompleted(with error: ApiError, onCompleted: (()-> Void)? = nil) {
         onMainQueue { [weak self] in
             self?.delegate?.onLoadContentError()
             self?.marvelCharactersRouter.showErrorAlert(with: error, onRefreshButtonTapped: { [weak self] in
                 self?.loadAllMarvelCharacters()
             })
+            onCompleted?()
         }
     }
 
