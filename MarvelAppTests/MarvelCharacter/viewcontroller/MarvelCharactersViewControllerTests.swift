@@ -28,6 +28,48 @@ class MarvelCharactersViewControllerTests: XCTestCase, ViewControllerCreatable {
         XCTAssertEqual(viewController.navigationItem.title, "Characters")
     }
 
+    func testOnLoadContentStarted_setsActivityIndicatorVisible() {
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewController = marvelCharactersViewController(viewModel: viewModel)
+        _ = viewController.view
+        viewController.onLoadContentStarted()
+        XCTAssertEqual(viewController.activityIndicatorView.isAnimating, true)
+    }
+
+    func testOnLoadContentCompleted_setsActivityIndicatorHidden() {
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewController = marvelCharactersViewController(viewModel: viewModel)
+        _ = viewController.view
+        viewController.onLoadContentStarted()
+        XCTAssertEqual(viewController.activityIndicatorView.isAnimating, true)
+
+        viewController.onLoadContentCompleted()
+        XCTAssertEqual(viewController.activityIndicatorView.isAnimating, false)
+        XCTAssertEqual(viewController.activityIndicatorView.isHidden, true)
+    }
+
+    func testOnLoadContentError_setsActivityIndicatorHidden() {
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewController = marvelCharactersViewController(viewModel: viewModel)
+        _ = viewController.view
+        viewController.onLoadContentStarted()
+        XCTAssertEqual(viewController.activityIndicatorView.isAnimating, true)
+
+        viewController.onLoadContentError()
+        XCTAssertEqual(viewController.activityIndicatorView.isAnimating, false)
+        XCTAssertEqual(viewController.activityIndicatorView.isHidden, true)
+    }
+
+    func testOnLoadContentCompleted_reloadsTableView() {
+        let mockTableView = MockTableView()
+        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewController = marvelCharactersViewController(viewModel: viewModel)
+        _ = viewController.view
+        viewController.tableView = mockTableView
+        viewController.onLoadContentCompleted()
+        XCTAssertEqual(mockTableView.isReloadDataCalled, true)
+    }
+
     private func marvelCharactersViewController(viewModel: ViewModel) -> MarvelCharactersViewController {
         return createViewController(
             with: viewModel,
