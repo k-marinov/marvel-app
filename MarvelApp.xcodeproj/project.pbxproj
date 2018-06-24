@@ -99,7 +99,6 @@
 		B6E0562720DD7EB3003039CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562620DD7EB3003039CD /* Assets.xcassets */; };
 		B6E0562A20DD7EB3003039CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E0562820DD7EB3003039CD /* LaunchScreen.storyboard */; };
 		B6E0564620DD8818003039CD /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E0564520DD8818003039CD /* characters.json */; };
-		B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0564D20DD93D3003039CD /* NibCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,7 +208,6 @@
 		B6E0563020DD7EB3003039CD /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E0563620DD7EB3003039CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E0564520DD8818003039CD /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
-		B6E0564D20DD93D3003039CD /* NibCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,7 +695,6 @@
 			children = (
 				B6A7A77C20DE776C003CC418 /* Constants.swift */,
 				B6C0615D20DD95FB000E9531 /* FileHelper.swift */,
-				B6E0564D20DD93D3003039CD /* NibCreator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -885,7 +882,6 @@
 				B6A7A77120DE523A003CC418 /* ApiRequestTests.swift in Sources */,
 				B6A7A7A620DE90DF003CC418 /* MockURLProtocol.swift in Sources */,
 				B6DE8BEA20DFE5470038A808 /* MockTableView.swift in Sources */,
-				B6E0564F20DD93D3003039CD /* NibCreator.swift in Sources */,
 				B6DE8BC220DEDCAC0038A808 /* MockURLProtocolMother.swift in Sources */,
 				B6C0617A20DDA2ED000E9531 /* ThumbnailResourceTests.swift in Sources */,
 				B6DE8BE620DFDB180038A808 /* MockMarvelCharactersViewModelDelegate.swift in Sources */,

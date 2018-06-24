@@ -17,8 +17,7 @@ struct UrlResource: Resource {
     }
 
     func isDetail() -> Bool {
-        return !StringUtil.isNilOrEmpty(detail) &&
-            detail.lowercased() == "detail"
+        return !StringUtil.isNilOrEmpty(detail) && detail.lowercased() == "detail"
     }
 
     private enum CodingKeys: String, CodingKey {
