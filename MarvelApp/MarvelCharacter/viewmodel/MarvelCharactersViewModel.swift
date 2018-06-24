@@ -5,9 +5,11 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
     private var marvelCharactersService: MarvelCharacterService
     private(set) var dataSource = TableViewDataSource<MarvelCharacterResource, MarvelCharacterCell>()
     private(set) var delegate: TableViewDelegate!
+    private(set) var marvelCharacterDetailRouter: MarvelCharacterDetailRouter
 
     required init(with componentCreatable: ComponentCreatable) {
         marvelCharactersService = componentCreatable.create(with: componentCreatable)
+        marvelCharacterDetailRouter = componentCreatable.create()
         delegate = TableViewDelegate(rowSelectable: self)
     }
 
@@ -32,8 +34,11 @@ class MarvelCharactersViewModel: ViewModel, RowSelectable {
     }
 
     func onSelected(indexPath: IndexPath) {
-        print("selected", indexPath)
-        // TODO: navigate to details
+        marvelCharacterDetailRouter.showMarvelCharacter(with: findCharacterDetail(indexPath: indexPath))
+    }
+
+    private func findCharacterDetail(indexPath: IndexPath) -> MarvelCharacterDetailRepresentable {
+        return dataSource.findItem(at: indexPath) as! MarvelCharacterDetailRepresentable
     }
 
 }

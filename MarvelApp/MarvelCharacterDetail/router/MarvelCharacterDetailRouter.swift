@@ -2,7 +2,7 @@ import UIKit
 
 class MarvelCharacterDetailRouter: ViewControllerCreatable, Navigation {
 
-    func showFruitDetail(detail: MarvelCharacterDetailRepresentable, animated: Bool = true) {
+    func showMarvelCharacter(with detail: MarvelCharacterDetailRepresentable, animated: Bool = true) {
         navigationController()?.pushViewController(viewController(with: detail), animated: animated)
     }
 

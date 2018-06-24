@@ -1,6 +1,6 @@
 import Foundation
 
-struct MarvelCharacterResource: Resource, MarvelCharacterCellRepresentable {
+struct MarvelCharacterResource: Resource, MarvelCharacterCellRepresentable, MarvelCharacterDetailRepresentable {
 
     private(set) var name: String
     private var description: String

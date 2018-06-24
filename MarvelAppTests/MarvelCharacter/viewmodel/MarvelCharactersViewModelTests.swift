@@ -12,11 +12,12 @@ class MarvelCharactersViewModelTests: XCTestCase {
         viewModel = MarvelCharactersViewModel(with: creator)
     }
 
-    func testOnSelectedRow_whenTableViewDidSelectRowTapped_returnsIndexPath() {
+    func testOnSelectedRow_whenTableViewDidSelectRowTapped_showsCharacterDetail() {
         let indexPath = IndexPath(item: 1, section: 0)
-        let viewModel = MockMarvelCharactersViewModel(with: creator)
+        let viewModel = MarvelCharactersViewModel(with: creator)
+        viewModel.dataSource.appendOnce(contentsOf: MarvelCharacterMother.marvelCharactersResource().characters())
         viewModel.delegate.tableView(UITableView(frame: CGRect.zero), didSelectRowAt: indexPath)
-        XCTAssertEqual(viewModel.selectedIndexPath, indexPath)
+        XCTAssertEqual(creator.mockMarvelCharacterDetailRouter().isShowMarvelCharacterCalled, true)
     }
 
     func testLoadMarvelCharacters_whenSuccess_callsOnStartedOnMainQueue() {

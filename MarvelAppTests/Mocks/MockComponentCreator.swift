@@ -5,6 +5,7 @@ import Foundation
 class MockComponentCreator: ComponentCreatable {
 
     var marvelCharacterService: MarvelCharacterService!
+    var marvelCharacterDetailRouter: MarvelCharacterDetailRouter!
 
     init() {
     }
@@ -19,14 +20,22 @@ class MockComponentCreator: ComponentCreatable {
         return marvelCharacterService as! MockMarvelCharacterService
     }
 
+    func mockMarvelCharacterDetailRouter() -> MockMarvelCharacterDetailRouter {
+        return marvelCharacterDetailRouter as! MockMarvelCharacterDetailRouter
+    }
+
     func create(with componentCreatable: ComponentCreatable) -> MarvelCharacterService {
         return marvelCharacterService
+    }
+
+    func create() -> MarvelCharacterDetailRouter {
+        return marvelCharacterDetailRouter
     }
 
     class func buildAllMocks() -> MockComponentCreator {
         let creator: MockComponentCreator = MockComponentCreator()
         creator.marvelCharacterService = MockMarvelCharacterService(with: creator)
-
+        creator.marvelCharacterDetailRouter = MockMarvelCharacterDetailRouter()
         return creator
     }
 
