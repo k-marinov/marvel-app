@@ -1,6 +1,6 @@
 import UIKit
 
-class MarvelCharactersViewController: UIViewController, ModelableViewController {
+class MarvelCharactersViewController: UIViewController, MarvelCharactersViewModelDelegate, ModelableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -12,7 +12,8 @@ class MarvelCharactersViewController: UIViewController, ModelableViewController 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        loadContent()
+        setUpViewModelDelegate()
+        marvelCharactersViewModel.loadAllMarvelCharacters()
     }
 
     private func setUp() {
@@ -20,22 +21,28 @@ class MarvelCharactersViewController: UIViewController, ModelableViewController 
         setUpNavigationBarTitle()
     }
 
+    private func setUpViewModelDelegate() {
+        marvelCharactersViewModel.delegate = self
+    }
+
     private func setUpTableView() {
         tableView.registerCellNib(with: MarvelCharacterCell.identifier)
-        tableView.dataSource = marvelCharactersViewModel.dataSource
-        tableView.delegate = marvelCharactersViewModel.delegate
+        tableView.dataSource = marvelCharactersViewModel.tableViewDataSource
+        tableView.delegate = marvelCharactersViewModel.tableViewDelegate
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
-    private func loadContent() {
-        marvelCharactersViewModel.loadAllMarvelCharacters(onStarted: {[weak self] in
-            self?.activityIndicatorView.startAnimating()
-        }, onCompleted: { [weak self] in
-            self?.activityIndicatorView.stopAnimating()
-            self?.tableView.reloadData()
-        }, onError: { [weak self] in
-            self?.activityIndicatorView.stopAnimating()
-        })
+    func onLoadContentStarted() {
+        activityIndicatorView.startAnimating()
+    }
+
+    func onLoadContentCompleted() {
+        activityIndicatorView.stopAnimating()
+        tableView.reloadData()
+    }
+
+    func onLoadContentError() {
+        activityIndicatorView.stopAnimating()
     }
 
     private func setUpNavigationBarTitle() {

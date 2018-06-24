@@ -3,42 +3,55 @@ import Foundation
 class MarvelCharactersViewModel: ViewModel, RowSelectable {
 
     private var marvelCharactersService: MarvelCharacterService
-    private(set) var dataSource = TableViewDataSource<MarvelCharacterResource, MarvelCharacterCell>()
-    private(set) var delegate: TableViewDelegate!
-    private(set) var marvelCharacterDetailRouter: MarvelCharacterDetailRouter
+    private(set) var tableViewDataSource = TableViewDataSource<MarvelCharacterResource, MarvelCharacterCell>()
+    private(set) var tableViewDelegate: TableViewDelegate!
+    private(set) var marvelCharactersRouter: MarvelCharactersRouter
+    private var componentCreatable: ComponentCreatable
+    weak var delegate: MarvelCharactersViewModelDelegate?
 
     required init(with componentCreatable: ComponentCreatable) {
+        self.componentCreatable = componentCreatable
         marvelCharactersService = componentCreatable.create(with: componentCreatable)
-        marvelCharacterDetailRouter = componentCreatable.create()
-        delegate = TableViewDelegate(rowSelectable: self)
+        marvelCharactersRouter = componentCreatable.create(with: componentCreatable)
+        tableViewDelegate = TableViewDelegate(rowSelectable: self)
     }
 
-    func loadAllMarvelCharacters(
-        onStarted: @escaping () -> Void,
-        onCompleted: @escaping () -> Void,
-        onError: @escaping () -> Void) {
-
-        onStarted()
+    func loadAllMarvelCharacters(onCompleted: (()-> Void)? = nil) {
+        delegate?.onLoadContentStarted()
         marvelCharactersService.findAllMarvelCharacters(
             with: MarvelCharactersRequest(),
             onCompleted: { [weak self] newMarvelCharacters in
-                onMainQueue {
-                    self?.dataSource.appendOnce(contentsOf: newMarvelCharacters)
-                    onCompleted()
-                }
-            }, onError: { apiError in
-                onMainQueue {
-                    onError()
-                }
+                self?.onLoadCompleted(with: newMarvelCharacters)
+                onCompleted?()
+            }, onError: { [weak self] apiError in
+                self?.onLoadCompleted(with : apiError)
+                onCompleted?()
         })
     }
 
+    private func onLoadCompleted(with newMarvelCharacters: [MarvelCharacterResource]) {
+        onMainQueue { [weak self] in
+            self?.tableViewDataSource.appendOnce(contentsOf: newMarvelCharacters)
+            self?.delegate?.onLoadContentCompleted()
+        }
+    }
+
+    private func onLoadCompleted(with error: ApiError) {
+        onMainQueue { [weak self] in
+            self?.delegate?.onLoadContentError()
+            self?.marvelCharactersRouter.showErrorAlert(with: error, onRefreshButtonTapped: { [weak self] in
+                self?.loadAllMarvelCharacters()
+            })
+        }
+    }
+
     func onSelected(indexPath: IndexPath) {
-        marvelCharacterDetailRouter.showMarvelCharacter(with: findCharacterDetail(indexPath: indexPath))
+        let detail = findCharacterDetail(indexPath: indexPath)
+        marvelCharactersRouter.showMarvelCharacter(with: componentCreatable, detail: detail)
     }
 
     private func findCharacterDetail(indexPath: IndexPath) -> MarvelCharacterDetailRepresentable {
-        return dataSource.findItem(at: indexPath) as! MarvelCharacterDetailRepresentable
+        return tableViewDataSource.findItem(at: indexPath) as! MarvelCharacterDetailRepresentable
     }
 
 }

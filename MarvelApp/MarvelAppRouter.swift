@@ -5,7 +5,7 @@ class MarvelAppRouter {
     private let marvelCharactersRouter: MarvelCharactersRouter
 
     required init(with componentCreatable: ComponentCreatable) {
-        marvelCharactersRouter = componentCreatable.create()
+        marvelCharactersRouter = componentCreatable.create(with: componentCreatable)
     }
 
     func setRootViewController(to window: UIWindow, componentCreatable: ComponentCreatable) -> UIWindow {

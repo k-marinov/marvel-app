@@ -15,83 +15,67 @@ class MarvelCharactersViewModelTests: XCTestCase {
     func testOnSelectedRow_whenTableViewDidSelectRowTapped_showsCharacterDetail() {
         let indexPath = IndexPath(item: 1, section: 0)
         let viewModel = MarvelCharactersViewModel(with: creator)
-        viewModel.dataSource.appendOnce(contentsOf: MarvelCharacterMother.marvelCharactersResource().characters())
-        viewModel.delegate.tableView(UITableView(frame: CGRect.zero), didSelectRowAt: indexPath)
+        viewModel.tableViewDataSource.appendOnce(contentsOf: MarvelCharacterMother.marvelCharactersResource().characters())
+        viewModel.tableViewDelegate.tableView(UITableView(frame: CGRect.zero), didSelectRowAt: indexPath)
         XCTAssertEqual(creator.mockMarvelCharacterDetailRouter().isShowMarvelCharacterCalled, true)
     }
 
     func testLoadMarvelCharacters_whenSuccess_callsOnStartedOnMainQueue() {
-        var isCalled: Bool = false
-        var isMainThread: Bool = false
+        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
+        viewModel.delegate = delegate
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(onStarted: {
-            isCalled = true
-            isMainThread = Thread.isMainThread
-            expectation.fulfill()
-        }, onCompleted: {
-        }, onError: {
+        viewModel.loadAllMarvelCharacters(onCompleted: {
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: Constants.timeout)
 
-        XCTAssertEqual(isCalled, true)
-        XCTAssertEqual(isMainThread, true)
+        XCTAssertEqual(delegate.isOnLoadContentStartedCalled, true)
+        XCTAssertEqual(delegate.isOnLoadContentStartedOnMainQueue, true)
     }
 
     func testLoadMarvelCharacters_whenSuccess_callsOnCompletedOnMainQueue() {
-        var isCalled: Bool = false
-        var isMainThread: Bool = false
+        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
+        viewModel.delegate = delegate
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(onStarted: {
-        }, onCompleted: {
-            isCalled = true
-            isMainThread = Thread.isMainThread
-            expectation.fulfill()
-        }, onError: {
+        viewModel.loadAllMarvelCharacters(onCompleted: {
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: Constants.timeout)
 
-        XCTAssertEqual(isCalled, true)
-        XCTAssertEqual(isMainThread, true)
+        XCTAssertEqual(delegate.isOnLoadContentCompletedCalled, true)
+        XCTAssertEqual(delegate.isOnLoadContentCompletedOnMainQueue, true)
     }
 
     func testLoadMarvelCharacters_whenFails_callsOnErrordOnMainQueue() {
-        var isCalled: Bool = false
-        var isMainThread: Bool = false
+        let delegate: MockMarvelCharactersViewModelDelegate = MockMarvelCharactersViewModelDelegate()
+        viewModel.delegate = delegate
 
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersFailureResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(onStarted: {
-        }, onCompleted: {
-            expectation.fulfill()
-        }, onError: {
-            isCalled = true
-            isMainThread = Thread.isMainThread
+        viewModel.loadAllMarvelCharacters(onCompleted: {
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: Constants.timeout)
 
-        XCTAssertEqual(isCalled, true)
-        XCTAssertEqual(isMainThread, true)
+        XCTAssertEqual(delegate.isOnLoadContentErrorCalled, true)
+        XCTAssertEqual(delegate.isOnLoadContentErrorOnMainQueue, true)
     }
 
     func testLoadMarvelCharacters_whenSuccess_appendsToDataSource() {
+        viewModel.delegate = nil
+
         MockURLProtocol.requestHandler = MockURLProtocolMother.findAllMarvelCharactersSuccessResponse()
         let expectation = XCTestExpectation(description: "")
-        viewModel.loadAllMarvelCharacters(onStarted: {
-        }, onCompleted: {
-            expectation.fulfill()
-        }, onError: {
+        viewModel.loadAllMarvelCharacters(onCompleted: {
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: Constants.timeout)
 
-        XCTAssertEqual(viewModel.dataSource.count(), 3)
+        XCTAssertEqual(viewModel.tableViewDataSource.count(), 3)
     }
 
 }

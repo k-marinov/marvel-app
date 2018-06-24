@@ -2,7 +2,7 @@ protocol RouterCreatable {
 
     func create(with componentCreatable: ComponentCreatable) -> MarvelAppRouter
 
-    func create() -> MarvelCharactersRouter
+    func create(with componentCreatable: ComponentCreatable) -> MarvelCharactersRouter
 
     func create() -> MarvelCharacterDetailRouter
 
@@ -14,8 +14,8 @@ extension RouterCreatable {
         return MarvelAppRouter(with: componentCreatable)
     }
 
-    func create() -> MarvelCharactersRouter {
-        return MarvelCharactersRouter()
+    func create(with componentCreatable: ComponentCreatable) -> MarvelCharactersRouter {
+        return MarvelCharactersRouter(with: componentCreatable)
     }
 
     func create() -> MarvelCharacterDetailRouter {

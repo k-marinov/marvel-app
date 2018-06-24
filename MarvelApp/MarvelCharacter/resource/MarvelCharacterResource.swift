@@ -22,8 +22,13 @@ struct MarvelCharacterResource: Resource, MarvelCharacterCellRepresentable, Marv
         return description
     }
 
-    func detailWebsiteUrl() -> String? {
-        return urls.filter { $0.isDetail() }.first?.websiteUrl()
+    func detailWebsiteUrl() -> URL? {
+        let urlString: String? = urls.filter { $0.isDetail() }.first?.websiteUrl()
+        if let urlString = urlString,
+            let url = URL(string: urlString) {
+            return url
+        }
+        return nil
     }
 
     func imageUrl() -> URL? {

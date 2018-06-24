@@ -17,7 +17,7 @@ class MarvelCharacterResourceTests: XCTestCase {
         XCTAssertEqual(resource.name, "Tippy Toe")
         XCTAssertEqual(resource.descriptionWithFallback(), MarvelCharacterMother.description)
         XCTAssertEqual(resource.imageUrl(), MarvelCharacterMother.imageUrl)
-        XCTAssertEqual(resource.detailWebsiteUrl(), MarvelCharacterMother.websiteUrl)
+        XCTAssertEqual(resource.detailWebsiteUrl(), URL(string: MarvelCharacterMother.websiteUrl))
     }
 
     func testDetailWebsiteUrl_whenDoesNotHaveUrlWithDetailType_returnsNil() {

@@ -6,10 +6,7 @@ class MockMarvelCharactersViewModel: MarvelCharactersViewModel {
 
     var isLoadAllMarvelCharactersCalled = false
 
-    override func loadAllMarvelCharacters(
-        onStarted: @escaping () -> Void,
-        onCompleted: @escaping () -> Void,
-        onError: @escaping () -> Void) {
+    override func loadAllMarvelCharacters(onCompleted: (() -> Void)?) {
         isLoadAllMarvelCharactersCalled = true
     }
 
