@@ -72,7 +72,7 @@ Main components of MVVM with Routers and Services architecture are
 
 - MarvelCharactersViewModel
 
-– MarvelCharacterService
+- MarvelCharacterService
 
 - MarvelCharacterRemote
 
