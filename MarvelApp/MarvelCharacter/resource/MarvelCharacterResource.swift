@@ -1,6 +1,6 @@
 import Foundation
 
-struct MarvelCharacterResource: Resource, TableViewItem {
+struct MarvelCharacterResource: Resource, MarvelCharacterCellRepresentable {
 
     private(set) var name: String
     private var description: String
