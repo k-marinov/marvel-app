@@ -5,8 +5,7 @@ import XCTest
 class MarvelCharactersRequestTest: XCTestCase {
 
     func testHttpRequestUrl_whenHasValue_returnsUrl() {
-        let expectedUrl: String = "http://gateway.marvel.com/v1/public/characters?ts=1&" +
-        "apikey=ff3d4847092294acc724123682af904b&hash=412b0d63f1d175474216fadfcc4e4fed&limit=25&orderBy=-modified"
+        let expectedUrl: String = "http://linxmap.com/marvel/heroes.json"
         XCTAssertEqual(MarvelCharactersRequest().httpRequestUrl(), expectedUrl)
     }
 
